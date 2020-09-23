@@ -60,7 +60,7 @@ while keepGoing :
             print(f"Amount needs to greater than $0")
             continue
     # if "w" withdraw money
-    elif actions.lower().startswith("w") :
+    elif actions.lower().startswith("w") and balance > 0 :
         # check and make sure it's a valid input
         # if not, keep asking for one.        
         try:
@@ -79,7 +79,8 @@ while keepGoing :
             continue
         else: 
             balance = balance - withdrawal
+    else:
+        print("You need money in your account!")
     # After action is done, ask if they want to continue.
     # ends programs if "q" is typed
     actions = input(f"Please make a selection: ")
-     
